@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.o$
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Launch My Rockets</title>
+        <script type="text/javascript" src="/webiopi.js"></script>
+        <script type="text/javascript">
+        webiopi().ready(function() {
+               // Create 8 buttons Launch buttons for the 8 GPIOs
+               var button1 = webiopi().createGPIOButton(9, "Sophia");
+               var button2 = webiopi().createGPIOButton(10, "Dimitrios");
+               var button3 = webiopi().createGPIOButton(22, "Eleni");
+               var button4 = webiopi().createGPIOButton(27, "Mom");
+               var button5 = webiopi().createGPIOButton(18, "Dad");
+               var button6 = webiopi().createGPIOButton(4, "Joe");
+               var button7 = webiopi().createGPIOButton(3, "Emma");
+               var button8 = webiopi().createGPIOButton(2, "LAUNCH 8");
+
+               // Append button to HTML element with ID="controls" using jQuery
+               $("#controls").append(button1);
+               $("#controls").append(button2);
+               $("#controls").append(button3);
+               $("#controls").append(button4);
+               $("#controls").append(button5);
+               $("#controls").append(button6);
+               $("#controls").append(button7);
+               $("#controls").append(button8);
+
+               // Refresh GPIO buttons
+               // pass true to refresh repeatedly of false to refresh once
+               webiopi().refreshGPIO(true);
+       });
+</script>
+<style>
+	button {
+		font-size: 72pt;
+		width: 600px;
+		height: 144px;
+	}
+	 HIGH {background-color: red}
+</style>
+</head>
+<body>
+        <div id="controls" align="center"></div>
+</body>
+</html>
